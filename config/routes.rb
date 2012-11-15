@@ -2,6 +2,9 @@ UrlShortener::Application.routes.draw do
   root to: 'shorteners#index'
   resources :shorteners
 
+  match 'goto/:short_url' => 'redirect#go'
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

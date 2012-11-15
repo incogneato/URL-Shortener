@@ -10,6 +10,7 @@ class ShortenersController < ApplicationController
 
   def create
     @shortener = Shortener.create(params[:shortener])
+    @shortener.shorten
     redirect_to :root if @shortener.save
   end
 

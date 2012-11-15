@@ -14,9 +14,10 @@
 ActiveRecord::Schema.define(:version => 20121115021204) do
 
   create_table "shorteners", :force => true do |t|
-    t.string   "url"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "original_url"
+    t.string   "short_url"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
 end
