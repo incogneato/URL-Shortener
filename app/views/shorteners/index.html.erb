@@ -1,2 +1,13 @@
-<h1>Shorteners#index</h1>
-<p>Find me in app/views/shorteners/index.html.erb</p>
+<h1>¯\_(ツ)_/¯</h1>
+
+<%= form_for @shortener do |f| %>
+	<%= f.label :url %>
+	<%= f.text_field :url %>
+	<%= f.submit %>
+<% end %>
+
+<ul>
+	<%@urls.each do |url| %>
+		<li><%=url.url%></li>
+	<%end%>
+</ul>
