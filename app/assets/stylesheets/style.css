@@ -1,0 +1,55 @@
+* { margin: 8 0 0 0; }
+html, body { height: 100%; }
+.wrapper {
+	text-align: center;
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -60px; /* the bottom margin is the negative value of the footer's height */
+}
+form { width: 550px; overflow: hidden; margin: auto;}
+label { margin-right: 8px; display: inline-table;}
+/*p#error { width: 80%; height: 20px; margin: auto; background: pink; border: 1px solid red; }*/
+/*p#flash { width: 80%; height: 20px; margin: auto; background: pink; border: 1px solid red; }*/
+
+input    {
+	width:400px;
+	display:inline-block;
+	border: 1px solid #999;
+	height: 55px;
+	-webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+}
+
+input[type=text], textarea {
+		font-size:16px;
+		padding: 2px 0 0 8px;
+		margin-bottom: 5px;
+		font-family: georgia;
+}
+
+input[type=text]:hover, textarea:hover, input:focus, textarea:focus {
+		background: #eeecec;
+		outline: none;
+}
+
+input[type=submit] {
+		width: 100px;
+		height: 34px;
+		padding: 8px;
+		margin-right: 37px;
+		text-align: center;
+		float: right;
+		cursor: pointer;
+		margin-top: 8px;
+}
+	
+input[type=submit]:hover {
+		background: #bcb4ae;
+}
+
+table {	margin: auto; }
+
+.push, .footer { height: 20px; }
+.footer { background-color: #f5f5f5; text-align: center; padding-top:; border-top: 1px solid #ddd;}

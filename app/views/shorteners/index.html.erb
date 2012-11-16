@@ -1,20 +1,36 @@
-<h1>¯\_(ツ)_/¯</h1>
+<!DOCTYPE html>
+<html> 
+<head></head>
+	<body>
+		<div class="wrapper">
+		
+		<h1>¯\_(ツ)_/¯</h1>
+		<%= form_for @shortener do |f| %>
+			<%= f.label 'Feed Me:' %>
+			<%= f.text_field :original_url, :value => 'http://' %>
+			<%= f.submit 'Crush' %>
+		<% end %>
+		<% unless @urls.empty?%>
+		<table cellpadding="10">
+			<tr>
+				<th>Original URL</th>
+				<th>Shortened URL</th>
+			</tr>
+			<%@urls.each do |u| %>
+			<tr>
+				<td><%=u.original_url%> &rarr;</td>
+				<td><%= link_to("#{u.short_url}", "#{u.original_url}")%></td>
+			</tr>
+			<%end%><!/each loop>
+		</table>
+		<%end%><!/unless>
 
-<%= form_for @shortener do |f| %>
-	<%= f.label 'Feed Me URL:' %>
-	<%= f.text_field :original_url %>
-	<%= f.submit 'Shorten' %>
-<% end %>
+				<div class="push"></div>
+		</div><!/wrapper class>
+		<div class="footer">
+				<p>&copy; <%= Time.now.year %> Crushn.it</p>
+		</div><!/footer>
+	</body>
+</html> 
 
-<table cellpadding="10">
-	<tr>
-		<th>Shortened URL</th>
-		<th>Original URL</th>
-	</tr>
-	<%@urls.each do |u| %>
-	<tr>
-		<td><%=u.short_url%> &rarr;</td>
-		<td><%=u.original_url%>.com</td>
-	</tr>
-	<%end%>
-</table>
+		

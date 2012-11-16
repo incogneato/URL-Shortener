@@ -11,7 +11,12 @@ class ShortenersController < ApplicationController
   def create
     @shortener = Shortener.create(params[:shortener])
     @shortener.shorten
-    redirect_to :root if @shortener.save
+    if @shortener.save
+      redirect_to :root
+    else
+      flash[:error] = "Invalid URL. Make sure to include 'http://'"
+      redirect_to :root
+    end
   end
 
   def show
