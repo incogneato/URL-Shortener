@@ -1,34 +1,29 @@
 class ShortenersController < ApplicationController
+  after_filter :increment_visit_count, :only => :show
+
   def index
     @shortener = Shortener.new
     @urls = Shortener.all
   end
 
-  def new
-    @shortener = Shortener.new
-  end
-
   def create
-    @shortener = Shortener.create(params[:shortener])
-    @shortener.shorten
+    @shortener = Shortener.new(params[:shortener])#.add_http
     if @shortener.save
-      redirect_to :root
+      redirect_to root_url
     else
       flash[:error] = "Invalid URL. Make sure to include 'http://'"
-      redirect_to :root
+      redirect_to root_url
     end
   end
 
   def show
-    @shortener = Shortener.new
+    @shortener = Shortener.find_by_short_url(params[:short_url])
+    redirect_to @shortener.original_url
   end
 
-  def update
-  end
+  private
 
-  def destroy
-  end
-
-  def edit
+  def increment_visit_count
+    @shortener.increment_visit_count
   end
 end

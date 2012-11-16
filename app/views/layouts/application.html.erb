@@ -7,10 +7,33 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<p id="error"><%= flash[:error] %></p>
-	<p id="notice"><%= flash[:notice] %></p>
-
+<div class="wrapper">
+	<h1>¯\_(ツ)_/¯</h1>
+	<% flash.each do |name, msg| %>
+  	<%= content_tag :div, msg, :id => "flash_#{name}" %>
+	<% end %>
 <%= yield %>
 
+		<div class="push"></div>
+	</div><!/wrapper class>
+	<div class="footer">
+		<ul>
+			<li>
+				<%if user_signed_in? %>
+					Signed in as <%= current_user.email %>. Not you?
+					<%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+				<%else%>
+					<%= link_to 'Sign up', new_user_registration_path %> or
+					<%= link_to 'Log in', new_user_session_path %>
+				<%end%>
+			</li>
+			<li>
+				&copy; <%= Time.now.year %> Crushn.it
+			</li>
+		</ul>
+	</div><!/footer>
 </body>
 </html>
+<!-- 	<p id="error"><#%= flash[:error] %></p>
+	<p id="alert"><#%= flash[:alert] %></p>
+	<p id="notice"><#%= flash[:notice] %></p> -->

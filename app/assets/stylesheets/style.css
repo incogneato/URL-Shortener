@@ -52,4 +52,5 @@ input[type=submit]:hover {
 table {	margin: auto; }
 
 .push, .footer { height: 20px; }
-.footer { background-color: #f5f5f5; text-align: center; padding-top:; border-top: 1px solid #ddd;}
+.footer { background-color:; text-align: center; padding-top:; border-top: 1px solid #ddd;}
+.footer ul li { list-style-type: none;}
