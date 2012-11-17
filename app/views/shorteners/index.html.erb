@@ -2,7 +2,7 @@
 	<tr>
 		<%= form_for @shortener do |f| %>
 		<td><%= f.text_field :original_url, :placeholder => 'Feed Moar URLz!' %></td>
-		<td><%= f.text_field :vanity_slug, :placeholder => 'Optional: add vanity url!' %></td>
+		<td><%= f.text_field :vanity_slug, :placeholder => 'Optional: add vanity url?' %></td>
 		<td><%= f.submit 'Crush it' %></td>
 	</tr>
 	<%end%>
