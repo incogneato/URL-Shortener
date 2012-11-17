@@ -4,7 +4,6 @@ UrlShortener::Application.routes.draw do
   root to: 'shorteners#index'
   resources :shorteners, :only => [:show, :create, :show]
   get '/:short_url' => 'shorteners#show'
-  resources :dashboard
 
   # get 'login' => "sessions#new", :as => 'login'
   # get 'logout' => 'session#destroy', :as => 'logout'

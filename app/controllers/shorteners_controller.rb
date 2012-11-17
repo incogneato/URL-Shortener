@@ -1,4 +1,5 @@
 class ShortenersController < ApplicationController
+  before_filter :authenticate_user!
   after_filter :increment_visit_count, :only => :show
 
   def index
@@ -7,11 +8,11 @@ class ShortenersController < ApplicationController
   end
 
   def create
-    @shortener = Shortener.new(params[:shortener])#.add_http
+    @shortener = Shortener.new(params[:shortener])
     if @shortener.save
       redirect_to root_url
     else
-      flash[:error] = "Invalid URL. Make sure to include 'http://'"
+      flash[:error] = "Sorry, we encountered an error." 
       redirect_to root_url
     end
   end
@@ -22,7 +23,6 @@ class ShortenersController < ApplicationController
   end
 
   private
-
   def increment_visit_count
     @shortener.increment_visit_count
   end

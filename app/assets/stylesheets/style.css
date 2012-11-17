@@ -5,9 +5,9 @@ html, body { height: 100%; }
 	min-height: 100%;
 	height: auto !important;
 	height: 100%;
-	margin: 0 auto -60px; /* the bottom margin is the negative value of the footer's height */
+	margin: 0 auto -115px; /* the bottom margin is the negative value of the footer's height */
 }
-form { width: 550px; overflow: hidden; margin: auto;}
+form { width: 500px; overflow: hidden; margin: auto;}
 label { margin-right: 8px; display: inline-table;}
 /*p#error { width: 80%; height: 20px; margin: auto; background: pink; border: 1px solid red; }*/
 /*p#flash { width: 80%; height: 20px; margin: auto; background: pink; border: 1px solid red; }*/
@@ -21,6 +21,8 @@ input    {
 	-moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
 	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
 }
+
+input#shortener_vanity_slug { width: 200px;}
 
 input[type=text], textarea {
 		font-size:16px;
@@ -49,8 +51,8 @@ input[type=submit]:hover {
 		background: #bcb4ae;
 }
 
-table {	margin: auto; }
+table {	margin: auto }
 
-.push, .footer { height: 20px; }
+.push, .footer { height: 7px; }
 .footer { background-color:; text-align: center; padding-top:; border-top: 1px solid #ddd;}
 .footer ul li { list-style-type: none;}

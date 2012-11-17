@@ -1,8 +1,13 @@
-<%= form_for @shortener do |f| %>
-	<%= f.text_field :original_url, :placeholder => 'Feed Me Moar URLz!' %>
-	<%= f.submit 'Crush it' %>
-<% end %>
-<% unless @urls.empty?%>
+<table>
+	<tr>
+		<%= form_for @shortener do |f| %>
+		<td><%= f.text_field :original_url, :placeholder => 'Feed Moar URLz!' %></td>
+		<td><%= f.text_field :vanity_slug, :placeholder => 'Optional: add vanity url!' %></td>
+		<td><%= f.submit 'Crush it' %></td>
+	</tr>
+	<%end%>
+</table>
+<%unless @urls.empty?%>
 <table cellpadding="10">
 	<tr>
 		<th>Original URL</th>
