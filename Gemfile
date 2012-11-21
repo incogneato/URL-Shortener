@@ -24,7 +24,7 @@ gem 'jquery-rails'
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0', :require => 'bcrypt'
 
-group :production, :staging do
+group :production do
   gem "pg"
 end
 
